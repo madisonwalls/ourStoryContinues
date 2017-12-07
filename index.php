@@ -207,6 +207,11 @@
       document.getElementById('text-muted').innerHTML = '';
       var counter = 0;
       <?php foreach($stories as $storie) : ?>
+      var storyAge = "<?php echo $storie['age']; ?>";
+      var storyState = "<?php echo $storie['state']; ?>";
+      var storyName = "<?php echo $storie['name']; ?>";
+      var storyStory= "<?php echo $storie['story']; ?>";
+      
       var htmlStringBlur = "<div id='story-id' class='indiv-story'><p class='story-age'><?= $storie['age']; ?><span class='pending'> (Pending Approval)</span></p><div class='story-content' style='filter: blur(10px);'><p class='story-name'>Filler Approval Name</p><p class='story-state'><?= $storie['state']; ?></p><p class='story-story'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p></div></div></div>";
       var htmlStringApproved = "<div id='story-id' class='indiv-story'><p class='story-age'><?= $storie['age']; ?></p><div class='story-content'><p class='story-name'><?= $storie['name']; ?></p><p class='story-state'><?= $storie['state']; ?></p><p class='story-story'><?= $storie['story']; ?></p></div></div></div>";
       if(state === <?= $storie['state']; ?>.id && <?= $storie['approved']; ?> === false){
